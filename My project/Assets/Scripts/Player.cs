@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector3 velocity;              // 移動方向
-    private float moveSpeed = 5.0f;        // 移動速度
-    public float jumpPower = 5.0f;         // ジャンプの強さ
+    [SerializeField] private float moveSpeed; // 移動速度
+    [SerializeField] public float jumpPower;  // ジャンプの強さ
+    private Vector3 velocity;                 // 移動方向
     private Rigidbody rb;
-    private bool isGrounded = true;        // 地面にいるかどうかの判定
+    private bool isGrounded = true;           // 地面にいるかどうかの判定
 
     void Start()
     {

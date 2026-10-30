@@ -284,6 +284,7 @@ MonoBehaviour:
   - {fileID: 8369223696281355415, guid: 5a35e23fe8d4ca34c86c616db6c61600, type: 3}
   kanjiSpawners:
   - {fileID: 6327718603571056719, guid: e6216b7301266fa4b8266afa0a449194, type: 3}
+  prefabToSpawn: {fileID: 0}
 --- !u!4 &238241504
 Transform:
   m_ObjectHideFlags: 0
@@ -505,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &290664465
 Transform:
   m_ObjectHideFlags: 0
@@ -1658,13 +1659,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1209659601}
   - component: {fileID: 1209659600}
+  - component: {fileID: 1209659596}
   - component: {fileID: 1209659599}
   - component: {fileID: 1209659598}
   - component: {fileID: 1209659597}
-  - component: {fileID: 1209659596}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7961261816aad924b8490cc4a078e385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  moveSpeed: 5
   jumpPower: 4
 --- !u!54 &1209659597
 Rigidbody:
@@ -2036,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1626192437
 Transform:
   m_ObjectHideFlags: 0
