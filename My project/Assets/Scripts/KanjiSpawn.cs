@@ -3,16 +3,38 @@ using UnityEngine;
 public class KanjiSpawn : MonoBehaviour
 {
     [SerializeField] private int MaxSpawnCount;
+
     public GameObject[] kanjiPrefabs;
     public GameObject[] kanjiSpawners;
+
     [SerializeField] private GameObject prefabToSpawn;
 
     void Start()
     {
-        // 1. 位置と回転を指定してスポーンする場合
-        //Instantiate(prefabToSpawn, new Vector3(0, 0, 0), Quaternion.identity);
+        // 仮に上からスポーン
+        SpawnKanji(0);
+    }
 
-        // 2. このスクリプトをアタッチしているオブジェクトと同じ位置・向きでスポーンする場合
-        Instantiate(prefabToSpawn, transform.position, transform.rotation);
+    void SpawnKanji(int spawnerIndex)
+    {
+        Transform spawner = kanjiSpawners[spawnerIndex].transform;
+
+        GameObject kanji = Instantiate(
+            prefabToSpawn,
+            spawner.position,
+            spawner.rotation
+        );
+
+        KanjiMove move = kanji.GetComponent<KanjiMove>();
+
+        Vector3[] directions =
+        {
+            Vector3.back,    // 上から下
+            Vector3.forward, // 下から上
+            Vector3.right,   // 左から右
+            Vector3.left     // 右から左
+        };
+
+        move.SetDirection(directions[spawnerIndex]);
     }
 }
