@@ -1,26 +1,48 @@
+
 using UnityEngine;
 
 public class KanjiSpawn : MonoBehaviour
 {
+    [Header("スポーン設定")]
     [SerializeField] private int MaxSpawnCount;
+    [SerializeField] private float spawnInterval;
 
     public GameObject[] kanjiPrefabs;
     public GameObject[] kanjiSpawners;
 
-    [SerializeField] private GameObject prefabToSpawn;
+    private int currentSpawnCount = 0;
 
     void Start()
     {
-        // 仮に上からスポーン
-        SpawnKanji(0);
+        InvokeRepeating(nameof(SpawnRandomKanji), spawnInterval, spawnInterval);
+    }
+
+    void SpawnRandomKanji()
+    {
+        // 最大スポーン数に達したら終了
+        if (currentSpawnCount >= MaxSpawnCount)
+        {
+            CancelInvoke(nameof(SpawnRandomKanji));
+            return;
+        }
+
+        // 12か所からランダムに選択
+        int randomSpawner = Random.Range(0, kanjiSpawners.Length);
+
+        SpawnKanji(randomSpawner);
+
+        currentSpawnCount++;
     }
 
     void SpawnKanji(int spawnerIndex)
     {
         Transform spawner = kanjiSpawners[spawnerIndex].transform;
 
+        // 漢字Prefabをランダムに選択
+        int randomIndex = Random.Range(0, kanjiPrefabs.Length);
+
         GameObject kanji = Instantiate(
-            prefabToSpawn,
+            kanjiPrefabs[randomIndex],
             spawner.position,
             spawner.rotation
         );
@@ -29,10 +51,21 @@ public class KanjiSpawn : MonoBehaviour
 
         Vector3[] directions =
         {
-            Vector3.back,    // 上から下
-            Vector3.forward, // 下から上
-            Vector3.right,   // 左から右
-            Vector3.left     // 右から左
+            Vector3.down,
+            Vector3.down,
+            Vector3.down,
+
+            Vector3.up,
+            Vector3.up,
+            Vector3.up,
+
+            Vector3.right,
+            Vector3.right,
+            Vector3.right,
+
+            Vector3.left,
+            Vector3.left,
+            Vector3.left
         };
 
         move.SetDirection(directions[spawnerIndex]);
