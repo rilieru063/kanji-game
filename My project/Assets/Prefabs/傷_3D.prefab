@@ -87,5 +87,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c7d90289df7133f45a8b59308fcdf69b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4995880023607036317}
   m_SourcePrefab: {fileID: 100100000, guid: c7d90289df7133f45a8b59308fcdf69b, type: 3}
+--- !u!1 &6036747146730034621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c7d90289df7133f45a8b59308fcdf69b, type: 3}
+  m_PrefabInstance: {fileID: 6847648854712477932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4995880023607036317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036747146730034621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effa36a8793f1c349964c3f0b249682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KanjiMove
+  moveSpeed: 5
