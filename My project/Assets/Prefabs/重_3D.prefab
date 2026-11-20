@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u91CD_3D"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ae63b5d301940541a9bbeccf15c300c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 3ae63b5d301940541a9bbeccf15c300c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5

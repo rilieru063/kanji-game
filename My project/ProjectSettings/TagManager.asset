@@ -9,6 +9,8 @@ TagManager:
   - Down
   - Right
   - Left
+  - Effect
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee012e7b890a7546b9b4006b7cab1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KanjiSpawn
-  MaxSpawnCount: 4
+  MaxSpawnCount: 30
   spawnInterval: 2
   kanjiPrefabs:
   - {fileID: 6036747146730034621, guid: 899f7cbaa9e356241b293556a5341036, type: 3}

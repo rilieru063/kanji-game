@@ -14,5 +14,30 @@ public class KanjiMove : MonoBehaviour
     void Update()
     {
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+
+        // ‰æ–ÊŠO‚Éo‚½‚çíœ
+        Vector3 screenPos = Camera.main.WorldToViewportPoint(transform.position);
+
+        if (screenPos.x < -0.1f || screenPos.x > 1.1f ||
+            screenPos.y < -0.1f || screenPos.y > 1.1f)
+        {
+            Destroy(gameObject);
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+{
+    if (!collision.gameObject.CompareTag("Player"))
+        return;
+
+    if (CompareTag("Effect"))
+    {
+        // Œø‰Ê‚ğ”­“®‚·‚éˆ—‚ÍŒã‚Å’Ç‰Á
+        Destroy(gameObject);
+    }
+    else if (CompareTag("Obstacle"))
+    {
+        // Á‚³‚¸‚Éc‚·
+    }
+}
 }

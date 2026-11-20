@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u8EFD_3D"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73d2e03ff336e2d4ba9f8dde9fc6c17c, type: 3}
+      propertyPath: m_TagString
+      value: Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 73d2e03ff336e2d4ba9f8dde9fc6c17c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
