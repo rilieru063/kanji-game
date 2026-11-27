@@ -32,8 +32,9 @@ public class KanjiMove : MonoBehaviour
 
     if (CompareTag("Effect"))
     {
-        // Œø‰Ê‚ğ”­“®‚·‚éˆ—‚ÍŒã‚Å’Ç‰Á
-        Destroy(gameObject);
+            GetComponent<PlayerHealth>().TakeDamage(10);
+            // Œø‰Ê‚ğ”­“®‚·‚éˆ—‚ÍŒã‚Å’Ç‰Á
+            Destroy(gameObject);
     }
     else if (CompareTag("Obstacle"))
     {
